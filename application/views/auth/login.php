@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>IAN Platform - Login Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url("assets/css/style.css") ?>">
   </head>
@@ -15,14 +15,11 @@
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                     <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                    The best offer <br />
-                    <span style="color: hsl(218, 81%, 75%)">for your business</span>
+                    Unlock the full potential  <br />
+                    <span style="color: hsl(218, 81%, 75%)">of IoT</span>
                     </h1>
                     <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Temporibus, expedita iusto veniam atque, magni tempora mollitia
-                    dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-                    ab ipsum nisi dolorem modi. Quos?
+                        Revolutionize your business with our comprehensive IoT services. We provide seamless integration, real-time data analytics, and smart automation solutions to enhance efficiency and foster innovation. Our expert team tailors each solution to meet your unique needs, ensuring you unlock the full potential of IoT technology. Boost productivity, reduce costs, and stay ahead of the competition with our cutting-edge IoT services.
                     </p>
                 </div>
 

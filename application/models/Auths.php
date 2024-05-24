@@ -14,4 +14,14 @@ class Auths extends CI_Model {
         if(!isset($udata['id'])) $this->logout();
         if(!isset($udata['company_id'])) $this->logout();
     }
+    
+    public function admin(){
+        $id = $this->session->userdata('company_id');
+
+        if($id == 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

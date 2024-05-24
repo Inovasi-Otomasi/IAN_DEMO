@@ -14,6 +14,9 @@ class Dashboard extends CI_Controller {
 
 	public function pages($page = "home")
 	{
+		if($page == "client"){
+			if(!$this->auths->admin()) die;
+		}
 		$data['page'] = $page;
 		$this->load->view('pages/base', $data);
 	}
@@ -23,6 +26,7 @@ class Dashboard extends CI_Controller {
 		
 		switch ($page) {
 			case 'client':
+				if(!$this->auths->admin()) die;
 				$data['company'] = $this->db->get('company')->result();
 				$data['users'] = $this->db->where('id !=', $_SESSION['id'])->get('users')->result();
 				$data['role'] = $this->db->get('role')->result();
@@ -46,15 +50,18 @@ class Dashboard extends CI_Controller {
 		
 		switch ($data[0]) {
 			case 'newDashboard':
+				if(!$this->auths->admin()) die;
 				$return['company'] = $this->db->get('company')->result();
 				$this->load->view('modal/newDashboard', $return);
 				break;
 			case 'newUser':
+				if(!$this->auths->admin()) die;
 				$return['role'] = $this->db->get('role')->result();
 				$return['company'] = $this->db->get('company')->result();
 				$this->load->view('modal/newUser', $return);
 				break;
 			case 'newCompany':
+				if(!$this->auths->admin()) die;
 				$this->load->view('modal/newCompany');
 				break;
 			case 'editUser':
@@ -64,10 +71,12 @@ class Dashboard extends CI_Controller {
 				$this->load->view('modal/editUser', $return);
 				break;
 			case 'editCompany':
+				if(!$this->auths->admin()) die;
 				$return['data'] = $this->db->where('id', $data[1])->get('company')->result()[0];
 				$this->load->view('modal/editCompany', $return);
 				break;
 			case 'editDashboard':
+				if(!$this->auths->admin()) die;
 				$return['company'] = $this->db->get('company')->result();
 				$return['data'] = $this->db->where('id', $data[1])->get('dashboard')->result()[0];
 				$this->load->view('modal/editDashboard', $return);

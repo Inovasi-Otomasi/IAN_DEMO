@@ -6,9 +6,10 @@
     <input type="text" class="form-control" id="name" name="username" value="<?= $data->username ?>" required placeholder="new user">
   </div>
   <div class="mb-1">
-    <label for="password" class="form-text">Password</label>
+    <label for="password" class="form-text">New Password</label>
     <input type="password" class="form-control" name="password" id="password">
   </div>
+  <?php if(($this->auths->admin()) && ($data->id != $_SESSION['id'])): ?>
   <label for="role" class="form-text">Role</label>
   <select class="form-select" id="role" required name="role_id" aria-label="role">
     <?php foreach($role as $rl): ?>
@@ -28,6 +29,6 @@
     <input class="form-check-input" <?php if($data->active == 1)echo "checked"; ?> name="active" value="1" type="checkbox" role="switch" id="flexSwitchCheckChecked">
     <label class="form-check-label form-text" for="flexSwitchCheckChecked">Activate User</label>
   </div>
-
+  <?php endif ?>
   <button type="submit" class="btn mt-2 btn-info text-white rounded-pill btn-sm" style="width:100%">Submit</button>
 </form>

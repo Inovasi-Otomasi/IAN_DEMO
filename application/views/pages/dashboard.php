@@ -14,12 +14,14 @@
                             </button>
                         </div>
                         <ul class="list-group">
-                            <li class="bg-glass list-group-item d-flex position-relative p-0" style="height:58px">
-                                <a modtrig="newDashboard" class="btn position-absolute text-start text-center text-secondary" style="width:100%">
-                                    <i class="fa-solid fa-plus fa-2xl"></i>
-                                    <p class="p-0 m-0" style="font-size:12px">new dashboard</p>
-                                </a>
-                            </li>
+                            <?php if($this->auths->admin()): ?>
+                                <li class="bg-glass list-group-item d-flex position-relative p-0" style="height:58px">
+                                    <a modtrig="newDashboard" class="btn position-absolute text-start text-center text-secondary" style="width:100%">
+                                        <i class="fa-solid fa-plus fa-2xl"></i>
+                                        <p class="p-0 m-0" style="font-size:12px">new dashboard</p>
+                                    </a>
+                                </li>
+                            <?php endif ?>
                             <li class="bg-glass list-group-item d-flex position-relative p-0 mb-0" style="height:38px">
                                 <input type="search" style="width:100%" class="rounded-pill form-control form-control-sm" search-target=".list-dashboard" autocomplete="false" placeholder="Search">
                             </li>
@@ -37,9 +39,10 @@
                                     <p style="font-size: small" class="text-faded p-0 m-0"><?php foreach($company as $comp){if($comp->id == $dash->company_id)echo $comp->name;} ?></p>
                                 </a>
                                 <div class="position-absolute d-flex justify-content-end vertical-center end-0" style="gap:5px">
+                                <?php if($this->auths->admin()): ?>
                                     <a class="link-secondary" modtrig="editDashboard~~<?= $dash->id ?>" href="#"><i class="fa-solid fa-wrench fa-xs"></i></a>
                                     <a class="link-danger" style="margin-right:10px" moddel="'<?= $dash->name ?>'//dashboard//<?= $dash->id ?>" href="#"><i class="fa-solid fa-trash-can fa-xs"></i></a>
-                                    
+                                <?php endif ?>
                                 </div>
                             </li>
                             <?php endforeach ?>

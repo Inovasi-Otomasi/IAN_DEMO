@@ -73,6 +73,7 @@
               <i class="fa-regular fa-tv"></i>
             </a>
           </li>
+          <?php if($this->auths->admin()): ?>
           <li>
             <a
               href="javascript:void(0)"
@@ -85,6 +86,7 @@
             <i class="fa-solid fa-id-card-clip fa-lg"></i>
             </a>
           </li>
+          <?php endif ?>
         </ul>
         <div class="dropdown border-top">
           <a
